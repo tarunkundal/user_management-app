@@ -13,55 +13,89 @@ import {
   Text,
   useColorModeValue,
   Link,
-  useColorMode,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import { BiShow, BiHide, BiMoon, BiSun } from "react-icons/bi";
+import { BiShow, BiHide } from "react-icons/bi";
 
 const UserForm = () => {
-  const { colorMode, toggleColorMode } = useColorMode();
   const [showPassword, setShowPassword] = useState(false);
 
   return (
     <Flex minH={"100vh"} align={"center"} justify={"center"}>
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
-        <Button onClick={toggleColorMode}>
-          {colorMode === "light" ? <BiMoon /> : <BiSun />}
-        </Button>
-        <Stack align={"center"}>
-          <Heading fontSize={"4xl"} textAlign={"center"}>
-            Create User
-          </Heading>
-          <Text fontSize={"lg"}>to enjoy all of our cool features ✌️</Text>
-        </Stack>
         <Box
           rounded={"lg"}
           boxShadow={"lg"}
           p={8}
           bg={useColorModeValue("secondary", "teritory")}
         >
+          {" "}
+          <Stack align={"center"} pb={6}>
+            <Heading fontSize={"4xl"} textAlign={"center"}>
+              Create User
+            </Heading>
+            <Text fontSize={"lg"} color={"red.200"}>
+              to enjoy all of our cool features ✌️
+            </Text>
+          </Stack>
           <Stack spacing={4}>
             <HStack>
               <Box>
                 <FormControl id="firstName" isRequired>
                   <FormLabel>First Name</FormLabel>
-                  <Input type="text" border={"2px"} fontWeight={"medium"} />
+                  <Input
+                    type="text"
+                    border={"2px"}
+                    fontWeight={"medium"}
+                    placeholder="Mexx"
+                    _placeholder={{
+                      color: useColorModeValue("teritory", "primary"),
+                      opacity: 0.4,
+                    }}
+                  />
                 </FormControl>
               </Box>
               <Box>
                 <FormControl id="lastName">
                   <FormLabel>Last Name</FormLabel>
-                  <Input type="text" border={"2px"} fontWeight={"medium"} />
+                  <Input
+                    type="text"
+                    border={"2px"}
+                    fontWeight={"medium"}
+                    placeholder="Well"
+                    _placeholder={{
+                      color: useColorModeValue("teritory", "primary"),
+                      opacity: 0.4,
+                    }}
+                  />
                 </FormControl>
               </Box>
             </HStack>
             <FormControl id="email" isRequired>
               <FormLabel>Email address</FormLabel>
-              <Input type="email" border={"2px"} fontWeight={"medium"} />
+              <Input
+                type="email"
+                border={"2px"}
+                fontWeight={"medium"}
+                placeholder="example@mail.com"
+                _placeholder={{
+                  color: useColorModeValue("teritory", "primary"),
+                  opacity: 0.4,
+                }}
+              />
             </FormControl>
             <FormControl id="phone" isRequired>
               <FormLabel>Phone Number</FormLabel>
-              <Input type="email" border={"2px"} fontWeight={"medium"} />
+              <Input
+                type="number"
+                border={"2px"}
+                placeholder="0987654321"
+                fontWeight={"medium"}
+                _placeholder={{
+                  color: useColorModeValue("teritory", "primary"),
+                  opacity: 0.4,
+                }}
+              />
             </FormControl>
             <FormControl id="password" isRequired>
               <FormLabel>Password</FormLabel>
@@ -70,6 +104,11 @@ const UserForm = () => {
                   type={showPassword ? "text" : "password"}
                   border={"2px"}
                   fontWeight={"medium"}
+                  placeholder="xxx008xxx"
+                  _placeholder={{
+                    color: useColorModeValue("teritory", "primary"),
+                    opacity: 0.4,
+                  }}
                 />
                 <InputRightElement h={"full"}>
                   <Button
@@ -88,8 +127,9 @@ const UserForm = () => {
               <Button
                 loadingText="Submitting"
                 size="lg"
+                color={"primary"}
                 bg={"button"}
-                _hover={{ bg: "teritory" }}
+                border={"2px"}
               >
                 Add User
               </Button>
