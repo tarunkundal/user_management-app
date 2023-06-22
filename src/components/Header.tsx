@@ -73,13 +73,29 @@ const Header = () => {
                   </Center>
                   <br />
                   <MenuDivider />
-                  <Stack color={useColorModeValue("", "secondary")}>
-                    <MenuItem bg={"initial"} _hover={{ bg: "button" }}>
-                      <Link to={ROUTES.EditUser}>Edit Profile</Link>
-                    </MenuItem>
-                    <MenuItem bg={"initial"} _hover={{ bg: "button" }}>
-                      Account Settings
-                    </MenuItem>
+                  <Stack>
+                    <Link to={ROUTES.EditUser}>
+                      <MenuItem
+                        bg={"initial"}
+                        _hover={{
+                          bg: useColorModeValue("secondary", "button"),
+                        }}
+                        color={useColorModeValue("black", "secondary")}
+                      >
+                        Edit Profile
+                      </MenuItem>
+                    </Link>
+                    <Link to={ROUTES.CreateUser}>
+                      <MenuItem
+                        bg={"initial"}
+                        _hover={{
+                          bg: useColorModeValue("secondary", "button"),
+                        }}
+                        color={useColorModeValue("black", "secondary")}
+                      >
+                        Create User
+                      </MenuItem>
+                    </Link>
                   </Stack>
                 </MenuList>
               </Menu>

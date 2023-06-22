@@ -12,6 +12,8 @@ import {
   Center,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
+import ROUTES from "../routes";
 
 const UserEditForm = () => {
   return (
@@ -96,17 +98,17 @@ const UserEditForm = () => {
               bg: "red.500",
             }}
           >
-            Cancel
+            <Link to={ROUTES.Home}>Cancel</Link>
           </Button>
           <Button
-            bg={"blue.400"}
-            color={"white"}
+            bg={"button"}
+            color={"primary"}
             w="full"
             _hover={{
-              bg: "blue.500",
+              bg: "teritory",
             }}
           >
-            Submit
+            Update
           </Button>
         </Stack>
       </Stack>

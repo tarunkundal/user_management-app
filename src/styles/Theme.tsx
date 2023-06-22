@@ -23,10 +23,7 @@ const theme = extendTheme({
         color: props.colorMode === "light" ? "#835858" : "#FFF0F0",
       },
       a: {
-        _hover: {
-          textDecoration: "underline",
-        },
-        color: props.colorMode === "dark" ? "teal.300" : "teal.500",
+        color: props.colorMode === "dark" ? "#FFF0F0" : "white",
       },
     }),
   },
