@@ -2,7 +2,7 @@ import { Route, Switch } from "react-router-dom";
 import Header from "./components/Header";
 import UserForm from "./components/UserForm";
 import ROUTES from "./routes";
-import NotFound from "./components/NotFound";
+import NotFound from "./screens/NotFound";
 import Home from "./screens/Home";
 
 const App = () => {
