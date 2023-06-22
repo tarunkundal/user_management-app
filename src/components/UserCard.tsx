@@ -14,60 +14,59 @@ import { SiAboutdotme } from "react-icons/si";
 import { Link } from "react-router-dom";
 import ROUTES from "../routes";
 import React from "react";
+import UserI from "../interface";
 
-const UserCard = () => {
+const UserCard = ({ firstName, lastName, bio, phone, email }: UserI) => {
+  const fullName = (firstName + " " + lastName).toString();
+
   return (
     <Stack
       boxShadow={"dark-lg"}
-      w={{ base: "70%", md: "25%" }}
+      w={{ base: "90%", md: "" }}
       m={4}
-      mx={"auto"}
       py={4}
+      mx={{ base: "auto", md: 4 }}
       borderRadius={"20px"}
       spacing={4}
-      bg={useColorModeValue("primary", "secondary")}
+      bg={useColorModeValue("secondary", "teritory")}
     >
       <Stack>
         <WrapItem justifyContent={"center"}>
-          <Avatar name="Tarun Chauhan" size={"2xl"} />
+          <Avatar name={fullName} size={"2xl"} />
         </WrapItem>
       </Stack>
       <Stack>
         <Center>
-          <Heading>{"Tarun Chauhan"}</Heading>
+          <Heading
+            bgGradient="linear(to-r, red.200, pink.300,red.200, orange.300,red.400)"
+            bgClip="text"
+          >
+            {fullName}
+          </Heading>
         </Center>
         <Stack spacing={2}>
           <Flex mx={4} alignItems={"center"}>
             <FiMail size={22} />
             <Text ml={4} fontWeight={"semibold"}>
-              {"chauhan@mail.com"}
+              {email}
             </Text>
           </Flex>
           <Flex ml={4} alignItems={"center"}>
             <FiPhone size={22} />
 
             <Text mx={4} fontWeight={"semibold"}>
-              {"09876543321"}
+              {phone}
             </Text>
           </Flex>
           <Flex mx={4} alignItems={"center"}>
-            <SiAboutdotme size={"60"} />
-            <Text ml={4}>
-              {
-                "In this post you'll learn how to programmatically navigate with the latest React Router v6 with the new useNavigate hook."
-              }
-            </Text>
+            <SiAboutdotme size={22} />
+            <Text ml={4}>{bio}</Text>
           </Flex>
         </Stack>
       </Stack>
       <Stack mx={2} flexDirection={{ base: "column", md: "row" }}>
         <Button w={{ md: "50%" }} bg={"button"} _hover={{ bg: "teritory" }}>
-          <Link
-            to={ROUTES.EditUser}
-            color={useColorModeValue("primary", "secondary")}
-          >
-            Edit
-          </Link>
+          <Link to={ROUTES.EditUser}>Edit</Link>
         </Button>
         <Button
           w={{ md: "50%" }}
