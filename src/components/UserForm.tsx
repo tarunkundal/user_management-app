@@ -231,13 +231,13 @@ const UserForm = () => {
                     size="lg"
                     color={"primary"}
                     type="submit"
-                    bgGradient="linear(to-r, red.200, pink.300,red.200, orange.300,red.400)"
+                    bgGradient="linear(to-r, yellow.400,red.400,  orange.300,)"
                     _hover={{
                       bgGradient:
                         "linear(to-l, red.200, pink.300,red.200, orange.300,red.400)",
                     }}
                   >
-                    Add User
+                    Create User
                   </Button>
                 </Stack>
                 <Stack pt={6}>

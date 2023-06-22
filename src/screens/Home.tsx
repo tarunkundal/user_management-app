@@ -1,6 +1,6 @@
 import React from "react";
 import UserI from "../interface";
-import { Grid, Stack } from "@chakra-ui/react";
+import { Center, Grid, Heading, Stack, Text } from "@chakra-ui/react";
 import UserCard from "../components/UserCard";
 import { useUserStore } from "../store/UserContextProvider";
 
@@ -37,7 +37,22 @@ const Home = () => {
   const data = users.length === 0 ? dummyData : users;
 
   return (
-    <Stack gap={6}>
+    <Stack gap={4}>
+      {users.length === 0 && (
+        <>
+          <Center>
+            <Text
+              fontSize={"22px"}
+              fontFamily={"heading"}
+              bgGradient="linear(to-r, red, pink.700, orange,purple,red)"
+              bgClip="text"
+            >
+              Please, Create User to start.
+            </Text>
+          </Center>
+        </>
+      )}
+
       <Grid
         templateColumns={{ base: "repeat(1,1fr)", md: "repeat(3, 1fr)" }}
         gap={6}

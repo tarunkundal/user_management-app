@@ -1,21 +1,15 @@
 import {
   Box,
   Flex,
-  Avatar,
   Button,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuDivider,
   useColorModeValue,
   Stack,
   useColorMode,
-  Center,
-  Heading,
   Text,
+  Image,
 } from "@chakra-ui/react";
 import { BiHome, BiMoon, BiSun, BiUser } from "react-icons/bi";
+import { FaUsers } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import ROUTES from "../routes";
 
@@ -29,7 +23,7 @@ const Header = () => {
         borderBottom={"2px"}
       >
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-          <Heading>Logo</Heading>
+          <FaUsers size={40} />
 
           <Flex alignItems={"center"}>
             <Stack direction={"row"} spacing={7}>

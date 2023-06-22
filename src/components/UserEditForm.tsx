@@ -69,7 +69,12 @@ const UserEditForm = (props: {
       >
         <Flex justifyContent={"space-between"}>
           <Box />
-          <Heading lineHeight={1.1} fontSize={{ base: "2xl", sm: "3xl" }}>
+          <Heading
+            lineHeight={1.1}
+            fontSize={{ base: "2xl", sm: "3xl" }}
+            bgGradient="linear(to-r, yellow.400, pink.300, orange.300,purple.400,green.300)"
+            bgClip="text"
+          >
             Edit User Profile
           </Heading>
           <CloseButton
