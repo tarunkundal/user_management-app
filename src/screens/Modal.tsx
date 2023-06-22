@@ -1,10 +1,4 @@
-import {
-  Modal,
-  ModalBody,
-  ModalContent,
-  ModalOverlay,
-  useDisclosure,
-} from "@chakra-ui/react";
+import { Modal, ModalBody, ModalContent, ModalOverlay } from "@chakra-ui/react";
 import {
   ReactElement,
   JSXElementConstructor,
@@ -39,28 +33,3 @@ const Modall = (props: {
 };
 
 export default Modall;
-
-/*
-<Modall>
-    {
-      <Alert
-        status="success"
-        variant="subtle"
-        flexDirection="column"
-        alignItems="center"
-        justifyContent="center"
-        textAlign="center"
-        height="200px"
-      >
-        <AlertIcon boxSize="40px" mr={0} />
-        <AlertTitle mt={4} mb={1} fontSize="lg">
-          Sucessfully Created!
-        </AlertTitle>
-        <AlertDescription maxWidth="sm">
-          Thanks for registering your application. Our team will get back to you
-          soon.
-        </AlertDescription>
-      </Alert>
-    }
-  </Modall>
-*/

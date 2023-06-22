@@ -6,7 +6,6 @@ import {
   Stack,
   useColorMode,
   Text,
-  Image,
 } from "@chakra-ui/react";
 import { BiHome, BiMoon, BiSun, BiUser } from "react-icons/bi";
 import { FaUsers } from "react-icons/fa";

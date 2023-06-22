@@ -17,7 +17,6 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { useUserStore } from "../store/UserContextProvider";
-import { Redirect } from "react-router-dom";
 
 const UserEditForm = (props: {
   id: string;
