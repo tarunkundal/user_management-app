@@ -62,6 +62,15 @@ const UserForm = () => {
         status: "warning",
       });
     }
+    if (value.phone.length !== 10) {
+      return toast({
+        position: "top",
+        title: "Please enter valid Phone Number of 10 digits ",
+        isClosable: true,
+        duration: 3000,
+        status: "warning",
+      });
+    }
 
     addUser(value);
     setValue(initialValues);
