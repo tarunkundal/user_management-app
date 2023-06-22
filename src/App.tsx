@@ -11,7 +11,7 @@ const App = () => {
     <>
       <Header />
       <Switch>
-        <Route path={ROUTES.EditUser} exact component={UserEditForm} />
+        {/* <Route path={ROUTES.EditUser} exact component={UserEditForm} /> */}
         <Route path={ROUTES.Home} exact component={Home} />
         <Route path={ROUTES.CreateUser} exact component={UserForm} />
         <Route path={"*"} exact component={NotFound} />

@@ -6,56 +6,35 @@ import { useUserStore } from "../store/UserContextProvider";
 
 const Home = () => {
   const { users } = useUserStore();
-  const data: UserI[] = [
+  const dummyData: UserI[] = [
     {
       id: 1,
       firstName: "Tarun",
       lastName: "Chauhan",
-      email: "vbnm@mail.com",
+      email: "test@mail.com",
       phone: "098765432",
-      bio: "we will also add a button to print the values, we can use this button to submit values to our backend.",
+      bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
     },
-    {
-      id: 2,
-      firstName: "Tarun",
-      lastName: "Chauhan",
-      email: "vbnm@mail.com",
-      phone: "098765432",
-      bio: "we will also add a button to print the values, we can use this button to submit values to our backend.",
-    },
-    {
-      id: 3,
-      firstName: "Tarun",
-      lastName: "Chauhan",
-      email: "vbnm@mail.com",
-      phone: "098765432",
-      bio: "we will also add a button to print the values, we can use this button to submit values to our backend.",
-    },
+
     {
       id: 4,
-      firstName: "Tarun",
-      lastName: "Chauhan",
-      email: "vbnm@mail.com",
+      firstName: "Andrew",
+      lastName: "",
+      email: "test3@mail.com",
       phone: "098765432",
-      bio: "we will also add a button to print the values, we can use this button to submit values to our backend.",
+      bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
     },
     {
       id: 5,
-      firstName: "run",
-      lastName: "Chauhan",
-      email: "vbnm@mail.com",
+      firstName: "Anjali",
+      lastName: "Thakur",
+      email: "test4@mail.com",
       phone: "098765432",
-      bio: "we will also add a button to print the values, we can use this button to submit values to our backend.",
-    },
-    {
-      id: 6,
-      firstName: "Tarun",
-      lastName: "Chauhan",
-      email: "vbnm@mail.com",
-      phone: "098765432",
-      bio: "we will also add a button to print the values, we can use this button to submit values to our backend.",
+      bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
     },
   ];
+
+  const data = users.length === 0 ? dummyData : users;
 
   return (
     <Stack gap={6}>
@@ -64,7 +43,7 @@ const Home = () => {
         gap={6}
         m={{ base: "12" }}
       >
-        {users.map((user) => {
+        {data.map((user) => {
           return (
             <UserCard
               key={user.id}

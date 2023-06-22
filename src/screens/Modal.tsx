@@ -13,6 +13,7 @@ import {
 } from "react";
 
 const Modall = (props: {
+  onClose: () => void;
   children:
     | string
     | number
@@ -23,7 +24,7 @@ const Modall = (props: {
     | null
     | undefined;
 }) => {
-  const { isOpen, onClose } = useDisclosure();
+  const onClose = props.onClose;
 
   return (
     <>

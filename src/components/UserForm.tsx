@@ -16,8 +16,9 @@ import {
   AlertIcon,
   AlertTitle,
   AlertDescription,
+  CloseButton,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import ROUTES from "../routes";
 import { useState } from "react";
 import { useUserStore } from "../store/UserContextProvider";
@@ -65,12 +66,17 @@ const UserForm = () => {
     addUser(value);
     setValue(initialValues);
     setAlertIsOpen(true);
+    return <Redirect to={ROUTES.Home} />;
+  };
+
+  const onCloseAlert = () => {
+    setAlertIsOpen(false);
   };
 
   return (
     <>
       {alertIsOpen && (
-        <Modall>
+        <Modall onClose={onCloseAlert}>
           <Alert
             status="success"
             variant="subtle"
@@ -89,11 +95,7 @@ const UserForm = () => {
               you soon.
             </AlertDescription>
             <Link to={ROUTES.Home}>
-              <Button
-                mt={6}
-                colorScheme="green"
-                onClick={() => setAlertIsOpen(false)}
-              >
+              <Button mt={6} colorScheme="green" onClick={onCloseAlert}>
                 Okay
               </Button>
             </Link>
@@ -104,11 +106,17 @@ const UserForm = () => {
         <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
           <Box
             rounded={"lg"}
-            boxShadow={"lg"}
+            boxShadow={"dark-lg"}
             p={8}
             bg={useColorModeValue("secondary", "teritory")}
           >
-            <Stack align={"center"} pb={6}>
+            <Stack
+              align={"center"}
+              pb={6}
+              flexDirection={"row"}
+              justifyContent={"space-between"}
+            >
+              <Box />
               <Heading
                 fontSize={"4xl"}
                 bgGradient="linear(to-r, red.200, pink.300,red.200, orange.300,red.400)"
@@ -117,6 +125,13 @@ const UserForm = () => {
               >
                 Create User
               </Heading>
+              <Link to={ROUTES.Home}>
+                <CloseButton
+                  bg={"red.300"}
+                  color={"primary"}
+                  _hover={{ bg: "red.400" }}
+                />
+              </Link>
             </Stack>
             <form onSubmit={handleOnSubmit}>
               <Stack spacing={4}>
@@ -166,7 +181,7 @@ const UserForm = () => {
                     type="email"
                     border={"2px"}
                     fontWeight={"medium"}
-                    placeholder="example@mail.com"
+                    placeholder="your-email@example.com"
                     _placeholder={{
                       color: useColorModeValue("teritory", "primary"),
                       opacity: 0.4,
@@ -182,7 +197,7 @@ const UserForm = () => {
                   <Input
                     type="number"
                     border={"2px"}
-                    placeholder="0987654321"
+                    placeholder="your phone number"
                     fontWeight={"medium"}
                     _placeholder={{
                       color: useColorModeValue("teritory", "primary"),
