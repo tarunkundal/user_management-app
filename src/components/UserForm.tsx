@@ -128,7 +128,7 @@ const UserForm = () => {
               <Box />
               <Heading
                 fontSize={"4xl"}
-                bgGradient="linear(to-r, red.200, pink.300,red.200, orange.300,red.400)"
+                bgGradient="linear(to-r, red.200, pink.400,red.200, orange.300,red.400)"
                 bgClip="text"
                 textAlign={"center"}
               >
