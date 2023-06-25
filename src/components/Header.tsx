@@ -18,7 +18,7 @@ const Header = () => {
     <>
       <Box
         bg={useColorModeValue("secondary", "teritory")}
-        px={4}
+        px={"3%"}
         borderBottom={"2px"}
       >
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>

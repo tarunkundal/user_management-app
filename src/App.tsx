@@ -4,6 +4,7 @@ import UserForm from "./components/UserForm";
 import ROUTES from "./routes";
 import NotFound from "./screens/NotFound";
 import Home from "./screens/Home";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Route path={ROUTES.CreateUser} exact component={UserForm} />
         <Route path={"*"} exact component={NotFound} />
       </Switch>
+      <Footer />
     </>
   );
 };
