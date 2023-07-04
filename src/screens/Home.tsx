@@ -36,7 +36,7 @@ const Home = () => {
   const data = users.length === 0 ? dummyData : users;
 
   return (
-    <Stack gap={4}>
+    <Stack gap={4} minH={"100vh"}>
       {users.length === 0 && (
         <>
           <Center>

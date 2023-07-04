@@ -1,14 +1,14 @@
 import { Box, Flex, Stack, Text, useColorModeValue } from "@chakra-ui/react";
 
-import { FaGoogle, FaTelegram } from "react-icons/fa";
+import { FaGoogle, FaInstagram, FaTelegram } from "react-icons/fa";
 
 const Footer = () => {
   return (
     <Stack
-      bottom={0}
       w={"100vw"}
       bg={useColorModeValue("secondary", "teritory")}
       px={"10%"}
+      bottom={0}
     >
       <Stack
         display={"flex"}
@@ -24,12 +24,15 @@ const Footer = () => {
             Tarun Chauhan
           </Text>
         </Flex>
-        <Flex justifyContent={"space-between"} w={"50px"}>
+        <Flex justifyContent={"space-between"} w={"15%"}>
           <a href="https://www.goole.com">
             <FaGoogle cursor={"pointer"} />
           </a>
           <a href="https://www.telegram.com">
             <FaTelegram cursor={"pointer"} />
+          </a>
+          <a href="https://www.instagram.com">
+            <FaInstagram cursor={"pointer"} />
           </a>
         </Flex>
       </Stack>
