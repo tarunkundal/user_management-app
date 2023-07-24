@@ -46,7 +46,7 @@ const UserCard = ({ firstName, lastName, bio, phone, email, id }: UserI) => {
       )}
 
       <Stack
-        boxShadow={"dark-lg"}
+        boxShadow={"2xl"}
         w={{ base: "90%", md: "" }}
         m={4}
         py={4}
